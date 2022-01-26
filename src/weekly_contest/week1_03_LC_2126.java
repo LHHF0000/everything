@@ -8,8 +8,8 @@ public class week1_03_LC_2126 {
 	public static boolean asteroidsDestroyed(int mass, int[] asteroids) {
 		int n = asteroids.length;
 		int M = 17, W = 100005;
-		int[] v = new int[M];
-		long[] sum = new long[M];
+		int[] v = new int[M];	//记录某个桶里最小的数
+		long[] sum = new long[M];	//记录每个桶的和
 		for(int i = 0; i < M; i++) v[i] = W;
 		for(int x : asteroids) {
 			int p = fuc(x);
