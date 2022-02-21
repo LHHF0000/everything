@@ -8,7 +8,8 @@ public class javatest {
 	/**
      * @param args
      */
-    public static void main(String[] args) {        
+    public static void main(String[] args) {
+		// 不同的空字符串
 //        String str1 = new String();
 //        String str2 = null;
 //        String str3 = "";
@@ -40,7 +41,12 @@ public class javatest {
 //    	listOfMap.add(mymap01);
 //    	Map map = listOfMap.get(0);
 //    	System.out.println(map);
-    	System.out.println(mymap.get("1"));
+//    	System.out.println(mymap.get("1"));
+
+//		String roleno = "abc,def";
+//		roleno = roleno.substring(0, roleno.length() - 1);
+//		System.out.println(roleno);
+
     }
 }
 
