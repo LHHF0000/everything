@@ -1,6 +1,8 @@
 package leetcode00;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class javatest {
@@ -46,6 +48,8 @@ public class javatest {
 //		String roleno = "abc,def";
 //		roleno = roleno.substring(0, roleno.length() - 1);
 //		System.out.println(roleno);
+
+		List<String> bslines = new ArrayList<String>();
 
     }
 }
