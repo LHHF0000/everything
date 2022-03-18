@@ -14,7 +14,8 @@ public class SumOfString {
 //            sum += Integer.valueOf(st[i]);
 //        }
 //        System.out.print(sum);
-        List<String> bs = new ArrayList<>();
-        System.out.println(bs.size());
+//        List<String> bs = new ArrayList<>();
+//        System.out.println(bs.size());
+        System.out.println(String.valueOf(1));
     }
 }
