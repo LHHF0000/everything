@@ -15,8 +15,8 @@ public class Day_Day_Days {
                 ans += daysOfMon(ed[0], m - 1);
             }
             // 再计算间隔的整年
-            for (int y = ed[0]; y > sd[0]; y--) {
-                if (y - 1 > sd[0]) {
+            for (int y = ed[0] - 1; y > sd[0] - 1; y--) {
+                if (y > sd[0]) {
                     ans += isLeapYear(y)? 366 : 365;
                 } else {    // 最后计算sd当年天数
                     for (int m = 12; m >= sd[1]; m--) {
@@ -50,7 +50,9 @@ public class Day_Day_Days {
     }
 
     public static void main(String arg[]) {
-        System.out.print(numberOfDays("1998-1-2", "2022-3-18"));
+        System.out.println(numberOfDays("1998-1-2", "2022-3-18"));
+        System.out.println(numberOfDays("2000-2-9", "2022-4-15"));
+        System.out.println(numberOfDays("1998-1-2", "2000-2-9"));
     }
 
     // 返回当月天数
