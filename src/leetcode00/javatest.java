@@ -1,5 +1,9 @@
 package leetcode00;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +14,7 @@ public class javatest {
 	/**
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 		// 不同的空字符串
 //        String str1 = new String();
 //        String str2 = null;
@@ -50,7 +54,24 @@ public class javatest {
 //		System.out.println(roleno);
 
 		List<String> bslines = new ArrayList<String>();
+//		System.out.println(String.valueOf("003"));
 
+		// 测试GB2312每个字符占的字节数
+		String[] gb = {"12", "佳", "cdf", " ", "一个空格"};
+		for (int i = 0; i < gb.length; i++) {
+			byte[] bb = gb[i].getBytes("gb2312");
+			System.out.println(gb[i] + ":" + bb + ":" + bb.length);
+		}
+//		String pwd = "ｚｘｃ１２３z1";
+//		String hexStr = "";
+//		MessageDigest md5 = MessageDigest.getInstance("MD5");
+//		// 转换为MD5码
+//		byte[] digest = md5.digest(pwd.getBytes("utf-8"));
+//		hexStr = ByteUtils.toHexString(digest);
+//		System.out.println(resultString);
+//		System.out.println("".length());
+//		System.out.println("abc".length());
+//		System.out.println("周".length());
     }
 }
 
