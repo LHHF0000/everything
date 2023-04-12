@@ -1,2 +1,2 @@
-# leetcode0
-个人刷题记录
+# everything
+Code collection
