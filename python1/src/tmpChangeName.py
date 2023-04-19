@@ -18,9 +18,7 @@ def getE(name):
 
 
 if __name__ == '__main__':
-    list = [
-             ['STARS-804-C.mp4', '神木丽-STARS-804-C-2304-本能纠缠的极上的内衣4本番.mp4']
-            ]
+    list = []
     n = 0
     for i in list:
         print(list[n])

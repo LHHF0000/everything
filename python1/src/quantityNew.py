@@ -47,8 +47,8 @@ if __name__ == '__main__':
     numList = tuple(dict.values())
     num = 0
     for i in range(len(dictSortBySize)):
-        print('%-2s\t%-8s\t%-1s\t%-6s\t' % (i + 1, dictSortByNumber[i][0],
-                bcolors.HEADER + str(dictSortByNumber[i][1][0]) + bcolors.ENDC, round(dictSortByNumber[i][1][1], 2)))
+        print('%-2s\t%-8s\t%-1s\t%-6s\t' % (i + 1, dictSortBySize[i][0],
+                bcolors.HEADER + str(dictSortBySize[i][1][0]) + bcolors.ENDC, round(dictSortBySize[i][1][1], 2)))
         # print(f'{i+1:<5}{dictSortByNumber[i][0]:<10}{repr(dictSortByNumber[i][1][0]):<4}{repr(round(dictSortByNumber[i][1][1], 2)):>6}')
     for i in range(len(numList)):
         num += numList[i][0]
