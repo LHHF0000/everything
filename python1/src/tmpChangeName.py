@@ -1,7 +1,7 @@
 import os
 
 path1 = r'C:\迅雷下载'
-path2 = r'D:\迅雷下载'
+path2 = r'F:\tmp'
 path3 = r'E:\0tmp'
 
 
@@ -18,7 +18,10 @@ def getE(name):
 
 
 if __name__ == '__main__':
-    list = []
+    list = [
+            ]
+
+
     n = 0
     for i in list:
         print(list[n])
