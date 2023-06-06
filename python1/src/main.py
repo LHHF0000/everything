@@ -1,12 +1,11 @@
 import os
 from pprint import pprint
 
-path = r'F:\tmp'
+path = r'E:\0tmp'
 # path = r'C:\迅雷下载'
 
 if __name__ == '__main__':
     fileList = os.listdir(path)
-    print(fileList)
     n = 0
     list = []
     for i in fileList:

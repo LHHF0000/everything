@@ -44,7 +44,7 @@ if __name__ == '__main__':
             print(bcolors.ENDC + str(receive_speed), ' | ', str(transmit_speed))
 
         elapsed_time = time.time() - start_time
-        if elapsed_time >= 20:
+        if elapsed_time >= 120:
             avg_receive_speed = int(mean(receive_speed_list))
             avg_transmit_speed = int(mean(transmit_speed_list))
             print(bcolors.OKGREEN + str(avg_receive_speed), ' | ', str(avg_transmit_speed))
@@ -52,4 +52,4 @@ if __name__ == '__main__':
             transmit_speed_list = []
             start_time = time.time()
 
-        time.sleep(1)
+        time.sleep(2)
