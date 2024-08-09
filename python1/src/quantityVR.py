@@ -28,30 +28,35 @@ def is_mp4_file(file_path):
 
 
 if __name__ == '__main__':
-    fileList = os.listdir(path)
+    pathList = os.listdir(path)
+    n = 2
     dict = {}
     codeDict = []
-    for i in fileList:
-        if is_mp4_file(i):
-            flag = 0
-            fullPathName = path + '\\' + i
-            fileSize = round(os.path.getsize(fullPathName)/1024/1024/1024, 3)
-            fullFileName = i.rsplit(".", 1)[0]
-            pattern = r'[a-zA-Z]{4,5}-\d{3,4}'
-            matches = re.findall(pattern, fullFileName)
-            code = matches[0]
-            if code not in codeDict:
-                codeDict.append(code)
-                flag = 1
-            actorName = fullFileName.split("-", 1)[0]
-            if "、" in actorName:
-                actorNameList = actorName.split("、")
-                for j in actorNameList:
-                    deal(j, fileSize, flag)
+    while n <= 8:
+        filePath = path + pathList[n]
+        n += 1
+        fileList = os.listdir(filePath)
+        for i in fileList:
+            if is_mp4_file(i):
+                flag = 0
+                fullPathName = filePath + '\\' + i
+                fileSize = round(os.path.getsize(fullPathName)/1024/1024/1024, 3)
+                fullFileName = i.rsplit(".", 1)[0]
+                pattern = r'[a-zA-Z]{4,5}-\d{3,4}'
+                matches = re.findall(pattern, fullFileName)
+                code = matches[0]
+                if code not in codeDict:
+                    codeDict.append(code)
+                    flag = 1
+                actorName = fullFileName.split("-", 1)[0]
+                if "、" in actorName:
+                    actorNameList = actorName.split("、")
+                    for j in actorNameList:
+                        deal(j, fileSize, flag)
+                else:
+                    deal(actorName, fileSize, flag)
             else:
-                deal(actorName, fileSize, flag)
-        else:
-            continue
+                continue
     dictSortByNumber = sorted(dict.items(), key=lambda x: x[1][0], reverse=True)
     dictSortBySize = sorted(dict.items(), key=lambda x: x[1][1], reverse=True)
     dictSortByName = sorted(dict.items(), key=lambda x: x[0])
