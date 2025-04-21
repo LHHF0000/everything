@@ -6,7 +6,7 @@ class bcolors:
     ENDC = '\033[0m'  # black
 
 
-path = r'E:\\0\\'
+path = r'F:\\0\\'
 
 def deal(name, fileSize):
     pattern = r'^[a-zA-Z]{3,4}$'
@@ -22,7 +22,7 @@ def deal(name, fileSize):
 
 if __name__ == '__main__':
     pathList = os.listdir(path)
-    n = 1
+    n = 0
     dict = {}
     while n <= 16:
         filePath = path + pathList[n]
