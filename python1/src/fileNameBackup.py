@@ -11,7 +11,7 @@ def get_all_file_names(folder_path):
 
 if __name__ == '__main__':
     # 调用函数并传入文件夹路径
-    folder_path = r'F:'
+    folder_path = r'E:'
     file_names = get_all_file_names(folder_path)
 
     # 指定保存文件的路径
