@@ -1,8 +1,8 @@
 import os
 
-path1 = r'D:\XunLeiDownload'
+path1 = r'D:\迅雷下载\1'
 path2 = r'F:\FC2\2503'
-path3 = r'E:\0\T4：tmp'
+path3 = r'G:\0\T4：tmp'
 
 
 def getC(name):
@@ -20,8 +20,6 @@ def getE(name):
 if __name__ == '__main__':
     # 桃乃木香奈-ipx-813-C-2202-女仆-cut
     list = [
-
-
 
 ]
 

@@ -1,9 +1,9 @@
 import os
 from pprint import pprint
 
-path = r'E:\0\T4：tmp'
+path = r'G:\0\T4：tmp'
 # path = r'F:\tmp'
-# path = r'D:\XunLeiDownload'
+# path = r'D:\迅雷下载\1'
 
 if __name__ == '__main__':
     fileList = os.listdir(path)
