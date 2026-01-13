@@ -2,7 +2,7 @@ import os
 
 path1 = r'D:\迅雷下载\1'
 path2 = r'F:\FC2\2503'
-path3 = r'G:\0\T4：tmp'
+path3 = r'D:\video workspace\VR'
 
 
 def getC(name):
@@ -20,6 +20,8 @@ def getE(name):
 if __name__ == '__main__':
     # 桃乃木香奈-ipx-813-C-2202-女仆-cut
     list = [
+
+
 
 ]
 

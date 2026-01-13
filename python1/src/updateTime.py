@@ -74,7 +74,7 @@ def sync_file_times(path1, path2):
         if os.path.isfile(os.path.join(path2, filename)):
             # 移除文件名中的"-h265cq27"来匹配路径1的文件
             name, ext = os.path.splitext(filename)
-            original_name = name.replace("-h265cq27", "")
+            original_name = name.replace("-cq29", "")
             path2_files[original_name] = filename
     
     # 同步时间
@@ -113,8 +113,8 @@ def sync_file_times(path1, path2):
 
 if __name__ == '__main__':
     # 配置路径
-    path1 = r"D:\video workspace\input"  # 替换为实际的路径1
-    path2 = r"D:\video workspace\output"  # 替换为实际的路径2
+    path1 = r"D:\video workspace\input T3"  # 替换为实际的路径1
+    path2 = r"D:\video workspace\output T3"  # 替换为实际的路径2
     
     # 检查路径是否存在
     if not os.path.exists(path1):
