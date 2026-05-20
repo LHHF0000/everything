@@ -1,9 +1,10 @@
 import os
 from pprint import pprint
 
-# path = r'F:\0\T4：tmp'
-# path = r'F:\tmp'
-path = r'D:\video workspace\VR2'
+# path = r'G:\0\T4：tmp'
+# path = r'D:\video workspace\output'
+# path = r'G:\0\T4：tmp'
+path = r'E:\新建文件夹'
 
 if __name__ == '__main__':
     fileList = os.listdir(path)

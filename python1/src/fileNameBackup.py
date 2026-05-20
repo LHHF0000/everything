@@ -15,7 +15,7 @@ if __name__ == '__main__':
     file_names = get_all_file_names(folder_path)
 
     # 指定保存文件的路径
-    output_file = r'D:\图片\old2017\bak.txt'
+    output_file = r'E:\图片、文档、下载_副本\图片\old2017\bak.txt'
 
     # 删除已存在的文件内容
     with open(output_file, 'w', encoding='utf-8') as file:
