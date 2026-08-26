@@ -6,7 +6,7 @@ class bcolors:
     ENDC = '\033[0m'  # black
 
 
-path = r'F:\\0\\'
+path = r'G:\\0\\'
 
 def deal(name, fileSize):
     pattern = r'^[a-zA-Z]{3,4}$'
@@ -24,9 +24,12 @@ if __name__ == '__main__':
     pathList = os.listdir(path)
     n = 0
     dict = {}
-    while n <= 16:
+    while n < 30:
         filePath = path + pathList[n]
         fileList = os.listdir(filePath)
+        if pathList[n] in ["T1.6：SF DP", "T1.7：Fc2", "T1.7：Fc2 3+", "T1.7：无码流出", "T1.9：步兵", "T1.8：步兵 3+（波多、百合川纱良、川村麻耶、大桥、玲奈、日高千晶、森泽、上原亚衣、水川堇、樱井理亚、中野亚梨沙、姬川优奈）"]:
+            n += 1
+            continue        
         for i in fileList:
             fullPathName = filePath + '\\' + i
             fileSize = round(os.path.getsize(fullPathName)/1024/1024/1024, 3)
