@@ -9,8 +9,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 # ================== 配置 ==================
@@ -25,7 +23,7 @@ SEARCH_BUTTON = (By.ID, "search-submit")
 FIRST_RESULT_LINK = (By.CSS_SELECTOR, ".movie-list .item a")
 TITLE_SELECTOR = (By.CSS_SELECTOR, "strong.current-title")
 DATE_SELECTOR = (By.XPATH, "//strong[text()='日期:']/following-sibling::span[@class='value']")
-ACTOR_LIST_SELECTOR = (By.CSS_SELECTOR, ".panel-block .value a")
+ACTOR_LIST_SELECTOR = (By.CSS_SELECTOR, "a.actor-female")
 # ==================================================
 
 def setup_driver():
@@ -39,8 +37,9 @@ def setup_driver():
     # 核心修正：设置页面加载策略为 eager（不等待图片等资源）
     options.set_capability("pageLoadStrategy", "eager")
 
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
+    # 由 Selenium Manager 自动定位/下载匹配的驱动（selenium 4.11+ 内置，
+    # 不再依赖 webdriver-manager，也就不会再有 .wdm 残留锁文件导致启动失败）
+    driver = webdriver.Chrome(options=options)
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
     return driver
 
@@ -55,13 +54,6 @@ def extract_number_from_filename(filename):
 def get_first_female_actor(driver):
     try:
         actor_links = driver.find_elements(*ACTOR_LIST_SELECTOR)
-        for link in actor_links:
-            try:
-                sibling = link.find_element(By.XPATH, "./following-sibling::strong[contains(@class,'symbol')]")
-                if "female" in sibling.get_attribute("class"):
-                    return link.text.strip()
-            except:
-                continue
         if actor_links:
             return actor_links[0].text.strip()
         return ""
